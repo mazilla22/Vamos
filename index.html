@@ -84,12 +84,146 @@ body{background:#080b1c!important;background-image:radial-gradient(ellipse at 0%
 .test162-actions button{flex:1 1 150px;min-height:49px;border-radius:13px;border:1px solid #ffffff48;padding:11px 10px;font-size:14px;font-weight:900;cursor:pointer;touch-action:manipulation}
 .test162-primary{background:#daff8d;color:#16213a}.test162-secondary{background:#ffffff20;color:#fff}
 @media(max-width:430px){.test162 h3{font-size:20px}.test162-actions button{font-size:13px}}
+
+/* ¡Vamos! compact app navigation — no changes to games, scores, or save keys */
+.homeview{padding-bottom:calc(82px + env(safe-area-inset-bottom,0px));min-height:60vh}
+.vamos-pane[hidden]{display:none!important}
+.vamos-pane{animation:vamosEnter .15s ease-out}
+@keyframes vamosEnter{from{opacity:.75;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vamos-pane h2.vamos-pane-title{font-size:20px;line-height:1.2;margin:5px 2px 14px;color:#f7f7ff;letter-spacing:-.4px}
+.vamos-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);z-index:18;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;width:min(100%,820px);padding:9px 10px calc(9px + env(safe-area-inset-bottom,0px));background:#11162cee;border:1px solid #8273c655;border-bottom:0;border-radius:19px 19px 0 0;box-shadow:0 -9px 35px #020518a8;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.vamos-nav button{border:0;border-radius:13px;min-height:51px;padding:5px 3px;background:transparent;color:#acb5d7;font-size:11px;font-weight:800;cursor:pointer;touch-action:manipulation;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.vamos-nav button .navicon{font-size:23px;line-height:1.15}
+.vamos-nav button[aria-selected="true"]{background:#7d68d92e;color:#cfff95;box-shadow:inset 0 0 0 1px #8d84e355}
+.vamos-quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:11px 0}
+.vamos-quick-actions button{min-height:51px;border-radius:13px;background:#262c4f;border:1px solid #8e92cc55;color:white;font-weight:800;font-size:13px;padding:10px;cursor:pointer}
+.vamos-quick-actions button:first-child{background:#caff91;color:#1b2637;border-color:#ddffb0}
+.vamos-pane#vamosToday .daycard{margin:12px 0 5px;padding:14px}
+.vamos-pane#vamosToday .dayhead h2{font-size:18px}
+.vamos-pane#vamosToday .daystats{margin:12px 0 0}
+.vamos-pane#vamosToday .daystat{padding:8px 4px}
+.vamos-pane#vamosToday .daystat b{font-size:20px}
+.vamos-pane#vamosToday .improve{padding:9px;margin-top:10px}
+.vamos-extra-records{margin:9px 0 0;border-top:1px solid #ffffff1b;padding-top:8px}
+.vamos-extra-records summary{font-size:12px;color:#c7c7ef;font-weight:800;cursor:pointer;padding:6px 0}
+.vamos-extra-records .records{margin-top:8px}
+.vamos-pane#vamosToday .test162{margin:7px 0 10px;padding:13px 15px;border-radius:18px}
+.vamos-pane#vamosToday .test162 h3{font-size:19px;margin:7px 0 6px}
+.vamos-pane#vamosToday .test162 p{font-size:12px;margin:0 0 9px}
+.vamos-pane#vamosToday .test162-actions button{min-height:43px;padding:9px;font-size:12px}
+.enmode .vamos-pane#vamosToday .test162{display:none}
+.vamos-pane#vamosLearn .quest-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:12px}
+.vamos-pane#vamosLearn .quest-tile{min-height:104px;padding:11px 12px;border-radius:17px}
+.vamos-pane#vamosLearn .quest-tile .tile-icon{font-size:24px;margin:0 0 4px}
+.vamos-pane#vamosLearn .quest-tile strong{font-size:15px}
+.vamos-pane#vamosLearn .quest-tile small{font-size:11px}
+.vamos-pane#vamosLearn .smartcards-entry{margin:9px 0 12px;padding:12px 14px;border-radius:17px}
+.vamos-pane#vamosLearn .smartcards-entry .entry-picture{width:42px;height:42px;font-size:24px}
+.vamos-pane#vamosLearn .smartcards-entry strong{font-size:18px}
+.vamos-pane#vamosLearn .examquick{padding:13px!important;margin:6px 0 10px!important}
+.vamos-pane#vamosLearn .grid{gap:9px}
+.vamos-pane#vamosLearn .grid .mode{min-height:99px!important;padding:12px!important;border-radius:17px}
+.vamos-pane#vamosLearn .grid .mode .emoji{font-size:22px;margin:0 0 5px}
+.vamos-pane#vamosLearn .grid .mode strong{font-size:14px}
+.vamos-pane#vamosLearn .grid .mode span:not(.emoji){font-size:11px}
+.vamos-pane#vamosLearn .grid .mode:nth-child(2),.vamos-pane#vamosLearn .grid .mode:nth-child(3){display:none}
+.vamos-pane#vamosLearn .bookbtn{margin:3px 0 10px!important;padding:13px!important}
+.vamos-topic{background:#1c2140;border:1px solid #ffffff24;border-radius:16px;padding:11px 13px;margin:8px 0 13px}
+.vamos-topic b{display:block;font-size:13px}
+.vamos-topic p{display:none}
+.vamos-topic select{font-size:14px;padding:10px;margin:6px 0 0;min-height:43px}
+.vamos-pane#vamosArcade .arcade-link{margin:9px 0 15px}
+.vamos-pane#vamosArcade .arcade-help{font-size:13px;line-height:1.6;color:#c5cae4;background:#1a2040;border:1px solid #ffffff20;border-radius:17px;padding:16px}
+.vamos-pane#vamosMore .homeDetails{margin:3px 0 15px}
+.vamos-pane#vamosMore #homeExtras>.card{padding:16px}
+.vamos-pane#vamosMore #homeExtras .footer{padding:20px 0}
+@media(max-width:480px){.wrap{padding-top:10px}.hero{margin-bottom:9px;padding:4px 0 12px}.hero:before{display:none}.hero h1{font-size:30px}.hero p{font-size:11px;margin-top:2px}.vamos-pane#vamosToday .daystats .daystat span{font-size:10px}.vamos-pane#vamosToday .test162-actions{gap:6px}}
+@media(prefers-reduced-motion:reduce){.vamos-pane{animation:none}}
+
+/* ¡Vamos! 2.0 — premium learning path, teal edition. UI-only: storage keys unchanged. */
+:root{--bg:#071421;--card:#112739;--accent:#86f6ce;--ok:#7deac0;--text:#f4fbff;--muted:#adc5d5}
+body{background:radial-gradient(ellipse at 5% -12%,#0c626c 0,transparent 48%),linear-gradient(160deg,#071724 0,#091329 59%,#07101e 100%);color:#f4fbff}
+.wrap{max-width:680px;padding:18px 15px 35px}
+.hero{margin:0 0 13px;padding:6px 2px 15px!important;border-bottom:1px solid #ffffff12}
+.hero:before{display:none!important}
+.hero .toprow{align-items:center;gap:12px}
+.hero h1{font-size:32px!important;font-weight:950!important;letter-spacing:-1.4px!important;text-shadow:none;color:#f5ffff}
+.hero p{font-size:12px!important;color:#9fb7c4!important;letter-spacing:0!important;margin-top:2px!important}
+.langswitch{background:#12283bcc!important;border:1px solid #77cfca4b!important;border-radius:999px!important;padding:7px 10px!important;box-shadow:none!important;gap:6px!important}
+.langswitch .langflag{font-size:20px}
+.vamos-premium-welcome{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:7px 2px 14px}
+.vamos-premium-welcome h2{margin:0;font-size:25px;line-height:1.17;letter-spacing:-.75px;font-weight:900}
+.vamos-premium-welcome p{color:#a6c1cf;font-size:12px;margin:6px 0 0;line-height:1.4}
+.vamos-premium-coins{border:1px solid #5dccba55;border-radius:18px;padding:10px 13px;background:linear-gradient(140deg,#143d45,#122338);color:#e2fff4;display:flex;flex-direction:column;gap:3px;min-width:103px;align-items:flex-start}
+.vamos-premium-coins b{font-size:21px;line-height:1.1}
+.vamos-premium-coins span{font-size:10px;color:#abd4ca;font-weight:750}
+.vamos-premium-meter{display:flex;align-items:center;gap:13px;padding:14px 15px;background:linear-gradient(120deg,#172d40,#102334);border:1px solid #4aa9a95c;border-radius:20px;box-shadow:0 11px 28px #0003;margin-bottom:16px}
+.vamos-premium-medal{flex:0 0 49px;width:49px;height:49px;border-radius:17px;display:flex;align-items:center;justify-content:center;font-size:24px;background:linear-gradient(160deg,#226f65,#14514d);border:1px solid #7df7c64a;box-shadow:inset 0 1px 0 #ffffff24}
+.vamos-premium-meterinfo{flex:1;min-width:0}.vamos-premium-meterinfo .label{display:flex;justify-content:space-between;gap:6px;align-items:center}
+.vamos-premium-meterinfo b{font-size:17px}.vamos-premium-meterinfo span{font-size:11px;color:#b1c8d7;font-weight:650}
+.vamos-premium-track{height:9px;background:#263c51;border-radius:100px;overflow:hidden;margin-top:9px}
+.vamos-premium-fill{height:100%;width:0%;border-radius:100px;background:linear-gradient(90deg,#46d8c2,#a4ffc6);transition:width .35s ease}
+.vamos-premium-path{background:linear-gradient(155deg,#142c3d,#0f2034);border:1px solid #4a87995a;border-radius:24px;padding:15px 12px 12px;margin:0 0 13px;box-shadow:0 13px 35px #0003}
+.vamos-premium-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 3px 12px}
+.vamos-premium-heading h2{font-size:18px!important;letter-spacing:-.5px;margin:0;font-weight:900;color:#f2fffc}
+.vamos-premium-heading .small{font-size:11px;color:#afc9d1}
+.vamos-premium-step{position:relative;display:flex;gap:10px;align-items:center;width:100%;margin:8px 0;border:1px solid #607b8c61;border-radius:17px;background:#172c3ebd;color:#eaf9fc;padding:11px 11px;min-height:65px;text-align:left;cursor:pointer;touch-action:manipulation}
+.vamos-premium-step:active{transform:scale(.992)}
+.vamos-premium-step .symbol{flex:0 0 35px;display:flex;align-items:center;justify-content:center;font-size:23px;width:35px;height:35px;border-radius:12px;background:#244658}
+.vamos-premium-step .details{flex:1;min-width:0}
+.vamos-premium-step .details strong{display:block;font-size:14px;line-height:1.35}
+.vamos-premium-step .details small{display:block;color:#b4c8d4;font-size:11px;margin-top:3px;line-height:1.35}
+.vamos-premium-step .arrow{font-size:20px;color:#89f9ce;font-weight:900}
+.vamos-premium-step.primary{border:1.5px solid #72f7d1;background:linear-gradient(115deg,#10565a,#0c4351 55%,#102d3e);box-shadow:0 3px 18px #41e7cb26}
+.vamos-premium-step.primary .symbol{background:#218778}
+.vamos-premium-step.primary .arrow{border-radius:999px;background:#a0f9c6;color:#0b2431;padding:7px 11px;font-size:12px;white-space:nowrap}
+.vamos-premium-step.primary .details strong{font-size:16px}
+.vamos-premium-challenge{display:flex;gap:12px;align-items:center;padding:13px 14px;border-radius:19px;background:linear-gradient(115deg,#134456,#0a5260,#132f42);border:1px solid #5dd5c475;margin:10px 0 15px;color:#fff}
+.vamos-premium-challenge .symbol{font-size:28px}.vamos-premium-challenge .text{flex:1;min-width:0}.vamos-premium-challenge strong{font-size:15px;display:block}.vamos-premium-challenge small{font-size:11px;display:block;color:#c8e8e9;margin-top:3px}
+.vamos-premium-challenge button{border:1px solid #97f6cb;background:#a1ffd4;border-radius:99px;color:#062535;font-size:12px;font-weight:900;padding:10px 12px;min-height:42px;cursor:pointer}
+.vamos-premium-summary{padding:13px 14px;border:1px solid #496d815a;background:linear-gradient(140deg,#14283c,#102335);border-radius:19px;margin:0 0 7px}
+.vamos-premium-summary h3{font-size:15px;margin:0 0 11px;color:#edfef9}
+.vamos-premium-values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;text-align:center}
+.vamos-premium-values div:not(:last-child){border-right:1px solid #62839d48}
+.vamos-premium-values strong{display:block;color:#8cf9cd;font-size:19px;line-height:1.3}
+.vamos-premium-values small{display:block;color:#aac3d0;font-size:10px;margin-top:2px}
+.vamos-pane#vamosToday>.test162,.vamos-pane#vamosToday>.daycard,.vamos-pane#vamosToday>.vamos-quick-actions{display:none!important}
+.vamos-pane#vamosLearn .smartcards-entry,.vamos-pane#vamosLearn .quest-tile,.vamos-pane#vamosLearn .bookbtn,.vamos-pane#vamosLearn .mode{background:linear-gradient(140deg,#183c48,#15243d)!important;border:1px solid #6cb8b44a!important;box-shadow:none!important}
+.vamos-pane#vamosLearn .quest-tile small,.vamos-pane#vamosLearn .smartcards-entry small{color:#bbd8d7!important}
+.vamos-pane#vamosLearn .test162{background:linear-gradient(125deg,#183f4c,#243961)!important;border-color:#66d5c363!important}
+.vamos-pane#vamosArcade .arcade-link{background:linear-gradient(120deg,#154f56,#1b3454)!important;border-color:#57b6ad7a!important}
+.vamos-pane#vamosMore .daycard{background:linear-gradient(135deg,#14374a,#1a2940)!important;border-color:#51aaab55!important}
+.vamos-nav{background:#0d2030f5!important;border-color:#4c8b9e77!important;box-shadow:0 -8px 30px #030e17aa!important}
+.vamos-nav button{color:#aac2ce!important}
+.vamos-nav button[aria-selected="true"]{color:#a3ffd1!important;background:#2c9b8428!important;box-shadow:inset 0 0 0 1px #6af1bf6e!important}
+.vamos-nav button .navicon{display:flex;align-items:center;justify-content:center;height:26px}
+.vamos-nav button .navicon svg{height:22px;width:22px;stroke:currentColor;stroke-width:2;fill:none;stroke-linejoin:round;stroke-linecap:round}
+.vamos-pane .btn:not(.alt){background:#8df6c7;color:#0a2532}
+.vamos-pane .btn.alt{background:#1d394c}
+.vamos-pane#vamosLearn .vamos-pane-title,.vamos-pane#vamosMore .vamos-pane-title,.vamos-pane#vamosArcade .vamos-pane-title{color:#f4fffc}
+@media(max-width:385px){.vamos-premium-welcome h2{font-size:22px}.vamos-premium-coins{min-width:92px;padding:9px}.vamos-premium-challenge button{padding:9px 10px;font-size:11px}.vamos-premium-step.primary .arrow{padding:7px 8px}}
+
+
+/* One-file backup: accessible, compact panel in the More tab */
+.vamos-complete-backup{background:linear-gradient(135deg,#163d46,#151e39);border:1px solid #6ae2c267;border-radius:22px;padding:18px;margin:14px 0;color:#efffff;box-shadow:0 10px 28px #0002}
+.vamos-complete-backup h3{margin:0 0 7px;font-size:19px;letter-spacing:-.5px}
+.vamos-complete-backup p{font-size:13px;line-height:1.5;color:#b9d6d7;margin:5px 0 14px}
+.vamos-backup-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vamos-backup-actions button,.vamos-backup-actions label{box-sizing:border-box;display:flex;justify-content:center;align-items:center;min-height:56px;padding:12px 7px;border:1px solid #86e9d288;border-radius:15px;text-align:center;font:800 13px/1.3 system-ui,sans-serif;cursor:pointer}
+.vamos-backup-actions button{background:#aeffd9;color:#103638}
+.vamos-backup-actions label{background:#ffffff13;color:#e6fffd}
+.vamos-backup-actions label input{display:none}
+#vamosAllBackupStatus{min-height:18px;margin:10px 2px 0;font-size:12px;line-height:1.4;color:#a7f3d0}
+.vamos-legacy-backups{margin-top:12px;color:#bdcdd1;font-size:12px}
+.vamos-legacy-backups summary{cursor:pointer;padding:9px 0}
+.vamos-legacy-backups .btn{font-size:12px;padding:10px;margin:4px 3px 4px 0;display:inline-block}
+@media(max-width:370px){.vamos-backup-actions{grid-template-columns:1fr}}
 </style></head><body><div class='wrap'><div class='hero'><div class='toprow'><div><h1 id='appTitle'>🇪🇸 ¡Vamos!</h1><p id='appTag'>Spanisch lernen, ohne Lern-Marathon.</p></div><label class='langswitch' for='langToggle' aria-label='Zwischen Spanisch und Englisch wechseln'><span id='langEs' class='langflag active' title='Spanisch'>🇪🇸</span><span class='langtoggle'><input id='langToggle' type='checkbox' onchange="switchLanguage(this.checked?'en':'es')" aria-label='Englisch einschalten'><span class='langtrack'><span class='langknob'></span></span></span><span id='langEn' class='langflag' title='Englisch'>🇬🇧</span></label></div></div>
 <div id='homeview' class='homeview'>
-<section class="quest-banner"><div class="quest-eyebrow">⚡ DEIN NÄCHSTES LEVEL</div><h2>READY, PAUL?<br>LET'S LEVEL UP.</h2><p>Kurze Challenges. Neue Skills. Jeden Tag ein bisschen besser.</p><button class="quest-cta" onclick="start('quick')">⚡ JETZT SPIELEN →</button></section>
+<section class="quest-banner"><div class="quest-eyebrow">⚡ DEIN NÄCHSTES LEVEL</div><h2>READY, PAUL?<br>LET'S LEVEL UP.</h2><p>Kurze Challenges. Neue Skills. Jeden Tag ein bisschen besser.</p><button class="quest-cta" data-action="review">⚡ JETZT SPIELEN →</button></section>
 <div class="dash-eyebrow">✦ DEINE CHALLENGES</div><div class="quest-tiles">
 <button class="quest-tile tile-violet" onclick="openDialog()"><span class="tile-icon">💬</span><strong>Talk Mode</strong><small>Dialoge · schreiben oder sprechen</small></button>
-<button class="quest-tile tile-cyan" onclick="start('quick')"><span class="tile-icon">⚡</span><strong>Quick Play</strong><small>10 Fragen · Turbo-Runde</small></button>
+<button class="quest-tile tile-cyan" data-action="review"><span class="tile-icon">⚡</span><strong>Quick Play</strong><small>10 Fragen · Turbo-Runde</small></button>
 <button class="quest-tile tile-rose" onclick="start('write')"><span class="tile-icon">✍️</span><strong>Word Battle</strong><small>Wörter selbst schreiben</small></button>
 <button class="quest-tile tile-green" onclick="startMemory()"><span class="tile-icon">🧠</span><strong>Memory Run</strong><small>Merken · hören · gewinnen</small></button>
 </div><button type="button" class="smartcards-entry" onclick="smartcardsOpen()"><span class="entry-picture">📇</span><span class="entry-text"><strong>SmartCards</strong><small>Echte Karteikarten · 5 Lernfächer · täglich wiederholen</small></span><span class="entry-arrow">→</span></button><button type="button" class="arcade-link" onclick="openArcade()"><span class="arcade-link-icon">🕹️</span><span><strong>¡VAMOS! ARCADE</strong><small>🪙 <span id="arcadeDashCoins">0</span> Coins · 📚 <span id="arcadeDashStudy">00:00 / 30:00</span> Lernzeit</small></span><span class="arcade-link-more">→</span></button><section class="test162" aria-label="Spanisch-Test: Seite 162">
@@ -104,7 +238,7 @@ body{background:#080b1c!important;background-image:radial-gradient(ellipse at 0%
 <div class='records'><div class='record'><b>🏆 <span id='currentRun'>0</span> am Stück</b><span>Rekord: <strong id='bestRun'>0</strong></span></div><div class='record'><b>⭐ <span id='todayBest'>0</span> heute</b><span>Tagesrekord: <strong id='bestDay'>0</strong></span></div></div>
 <div class='improve'><div class='improveText'><b>🎯 Das kannst du verbessern</b><span><strong id='problemCount'>0</strong> Wörter brauchen noch Übung</span></div><button class='tinybtn' onclick="start('problems')">Üben</button><button class='tinybtn' onclick='openProblems()'>Alle</button></div></div>
 <button class='examquick' onclick='startExam()'><strong id='examHomeTitle'>🔥 KLASSENARBEIT</strong><span id='examHomeSub'>10 Aufgaben · Vokabeln · Lücken · Artikel · Plural · Textverständnis</span></button>
-<button class='quick' onclick="start('quick')"><div class='quickTop'><strong>⚡ QUICK PLAY</strong><span class='playcircle'>▶</span></div><small>10 Wörter · ca. 2 Minuten</small></button>
+<button class='quick' data-action="review"><div class='quickTop'><strong>⚡ QUICK PLAY</strong><span class='playcircle'>▶</span></div><small>10 Wörter · ca. 2 Minuten</small></button>
 <div class='sectionTitle'>SPIELMODI</div><div class='grid'><button class='card mode' onclick="start('cards')"><span class='emoji'>🃏</span><strong>Karten</strong><span>Aufdecken & merken</span></button><button class='card mode' onclick="start('write')"><span class='emoji'>✍️</span><strong>Schreib-Duell</strong><span>Ohne Auswahl. Du gegen das Wort.</span></button><button class='card mode' onclick="startMemory()"><span class='emoji'>🧠</span><strong>Memory Run</strong><span>Sehen · hören · merken</span></button><button class='card mode' onclick="start('boss')"><span class='emoji'>👾</span><strong>BOSS FIGHT</strong><span>Knack deine Problemwörter</span></button></div>
 <details class='homeDetails'><summary>📊 Lernfortschritt</summary><div class='card'><div class='toprow'><b>Vokabeln sicher</b><span id='progressText' class='small'></span></div><div class='bar'><i id='bar'></i></div><div class='small' style='margin-top:8px'>🔴 neu → 🟠 üben → 🟡 fast sicher → 🟢 gelernt</div></div></details>
 </div><div id='game' class='gameview'><div class='screen'><div class='card'><div class='toprow'><button class='btn alt' onclick='home()'>← Zurück</button><span id='counter' class='badge'></span></div><div id='lessonName' class='small'></div><div id='question' class='q'></div><div id='mc'></div><input id='typed' class='hide' autocomplete='off' placeholder='Antwort eintippen…'><div id='answer' class='answer hide'></div><div id='actions'></div></div></div></div><button class="btn bookbtn" onclick="openVocabBook()"><strong>📖 Vokabelheft</strong><span><span id='bookSub'>Alle Wörter · Deutsch ↔ Spanisch · Suche · 🔊 Aussprache</span></span></button>
@@ -234,7 +368,7 @@ let LANG=localStorage.getItem('vamosLang')||'es';let V=LANG==='en'?ENGLISH_V:SPA
 let LEGACY=JSON.parse(localStorage.getItem('vamosSave')||'null')||{score:{}};let ROOT=JSON.parse(localStorage.getItem('vamosBilingual')||'null')||{es:LEGACY,en:{score:{},smart:{},dailyStats:{},records:{bestRun:0,bestDay:0,memoryBest:0},currentRun:0}};function prepState(x){x=x||{};x.score=x.score||{};x.smart=x.smart||{};x.dailyStats=x.dailyStats||{};x.records=x.records||{bestRun:0,bestDay:0};x.records.memoryBest=x.records.memoryBest||0;x.currentRun=x.currentRun||0;return x}ROOT.es=prepState(ROOT.es);ROOT.en=prepState(ROOT.en);let S=ROOT[LANG];let deck=[],idx=0,mode='quick',current=null,currentReverse=false,roundAnswered=0,roundCorrect=0,advanceTimer=null;
 S.smart=S.smart||{};
 const norm=s=>s.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[¿?¡!.,]/g,'');function localDay(){let d=new Date(),y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),a=String(d.getDate()).padStart(2,'0');return y+'-'+m+'-'+a}function save(){ROOT[LANG]=S;localStorage.setItem('vamosBilingual',JSON.stringify(ROOT));if(LANG==='es')localStorage.setItem('vamosSave',JSON.stringify(S));renderStats()}function state(id){return S.score[id]||0}function todayStats(){let k=localDay();return S.dailyStats[k]||(S.dailyStats[k]={right:0,wrong:0})}function problems(){return V.filter(v=>smart(v.id).misses>0).sort((a,b)=>priority(b)-priority(a))}function renderStats(){let l=V.filter(v=>state(v.id)>=4).length;document.querySelector('#progressText').textContent=l+' / '+V.length;document.querySelector('#bar').style.width=(l/V.length*100)+'%';let t=todayStats(),total=t.right+t.wrong;document.querySelector('#todayRight').textContent=t.right;document.querySelector('#todayWrong').textContent=t.wrong;document.querySelector('#todayRate').textContent=total?Math.round(t.right/total*100)+' %':'–';document.querySelector('#currentRun').textContent=S.currentRun||0;document.querySelector('#bestRun').textContent=S.records.bestRun||0;document.querySelector('#todayBest').textContent=t.right;document.querySelector('#bestDay').textContent=S.records.bestDay||0;document.querySelector('#problemCount').textContent=problems().length;document.querySelector('#dayDate').textContent=new Date().toLocaleDateString('de-DE',{weekday:'short',day:'2-digit',month:'2-digit'});let pv=document.querySelector('#problemview');if(pv&&pv.classList.contains('active'))renderProblems()}function showRecord(msg){let e=document.querySelector('#recordToast');if(!e)return;e.textContent=msg;e.classList.add('show');clearTimeout(showRecord.t);showRecord.t=setTimeout(()=>e.classList.remove('show'),1800)}function touch(){}
-function pool(){let t=document.querySelector('#topic').value;return V.filter(v=>t==='all'||(t==='__test162'&&LANG==='es'&&v.t==='🎒 Unidad 1')||(t==='school'&&v.t.startsWith('🎒'))||(t==='unit2'&&v.t.startsWith('📘 Unit 2 ·'))||v.t===t)}function shuffle(a){return [...a].sort(()=>Math.random()-.5)}function smart(id){return S.smart[id]||{misses:0,recovery:0}}function priority(v){let x=smart(v.id);return 1+(x.misses*4)+(x.misses>0?(3-x.recovery)*2:0)}function weightedDeck(p,n){let bag=[];p.forEach(v=>{let w=Math.min(12,priority(v));for(let i=0;i<w;i++)bag.push(v)});let out=[],used={};while(out.length<n&&bag.length){let v=bag[Math.floor(Math.random()*bag.length)];let key=v.id;if(!used[key]||Object.keys(used).length>=p.length){out.push(v);used[key]=1}bag=bag.filter(x=>x.id!==key)}if(out.length<n)out.push(...shuffle(p).slice(0,n-out.length));return out.slice(0,n)}function scheduleRepeat(v){let gap=3+Math.floor(Math.random()*4),pos=Math.min(deck.length,idx+gap+1);deck.splice(pos,0,v)}function start(m){mode=m;let p=pool();if(m==='problems'){let q=problems();p=q.length?q:p}if(m==='boss'){let b=p.filter(v=>smart(v.id).misses>0).sort((a,b)=>priority(b)-priority(a));p=b.length?b:p.filter(v=>state(v.id)<2);if(!p.length)p=pool()}deck=(m==='cards'?weightedDeck(p,20):weightedDeck(p,10));idx=0;roundAnswered=0;roundCorrect=0;document.querySelector('#homeview').classList.add('hidden');document.querySelector('#homeExtras').classList.add('hide');document.querySelector('#game').classList.add('active');window.scrollTo(0,0);next()}function next(){let limit=(mode==='cards'?20:10);if(roundAnswered>=limit||idx>=deck.length){document.querySelector('#question').textContent='🏆 Runde geschafft!';document.querySelector('#mc').innerHTML='';document.querySelector('#typed').classList.add('hide');document.querySelector('#answer').classList.remove('hide');document.querySelector('#answer').innerHTML=(mode==='cards'?'Kartenrunde beendet':'<b>'+roundCorrect+' von '+limit+' richtig</b>')+'<br>Runde gespeichert ✓';touch();save();document.querySelector('#actions').innerHTML='<button class="btn" onclick="start(mode)">Nochmal 🔥</button>';return}current=deck[idx];document.querySelector('#counter').textContent=(Math.min(roundAnswered+1,limit))+' / '+limit;document.querySelector('#lessonName').textContent=current.t;document.querySelector('#answer').classList.add('hide');document.querySelector('#typed').classList.add('hide');document.querySelector('#mc').innerHTML='';document.querySelector('#actions').innerHTML='';let reverse=Math.random()<.45;const isNumber=(current.t==='Numbers'||current.t==='Zahlen');if(isNumber) reverse=true;currentReverse=reverse;if(mode==='cards'){document.querySelector('#question').innerHTML=(reverse?current.es:current.de)+' <button class="speakbtn" onclick="speak(current.es)">🔊</button>';document.querySelector('#actions').innerHTML='<button class="btn" onclick="revealCard('+(reverse?1:0)+')">Antwort zeigen 👀</button>'}else if(mode==='write'||mode==='boss'){document.querySelector('#question').innerHTML='🇩🇪 '+escHtml(current.de)+' <button class="speakbtn" onclick="speak(current.es)" aria-label="Lösung vorlesen">🔊</button>';let inp=document.querySelector('#typed');inp.classList.remove('hide');inp.value='';inp.focus();document.querySelector('#actions').innerHTML='<button class="btn" onclick="checkWrite()">Check ✓</button>';inp.onkeydown=e=>{if(e.key==='Enter')checkWrite()}}else{document.querySelector('#question').innerHTML=(reverse?(LANG==='en'?'🇬🇧 ':'🇪🇸 ')+escHtml(current.es):'🇩🇪 '+escHtml(current.de));let ans=reverse?current.de:current.es;let distractPool=pool().filter(v=>v.id!==current.id);if(current.t==='Numbers'||current.t==='Zahlen')distractPool=V.filter(v=>v.id!==current.id&&v.t===current.t);let opts=shuffle([ans,...shuffle(distractPool).slice(0,3).map(v=>reverse?v.de:v.es)]);document.querySelector('#mc').innerHTML=opts.map(o=>'<button class="btn choice" onclick="pick(this,'+JSON.stringify(o===ans)+')">'+o+'</button>').join('')}}function mark(ok){arcadeRecordAnswer(ok);roundAnswered++;if(ok)roundCorrect++;let t=todayStats(),oldRun=S.records.bestRun||0,oldDay=S.records.bestDay||0;let n=state(current.id),x=smart(current.id);if(ok){t.right++;S.currentRun=(S.currentRun||0)+1;S.score[current.id]=Math.max(0,Math.min(4,n+1));if(x.misses>0){x.recovery=(x.recovery||0)+1;if(x.recovery>=3){x.misses=0;x.recovery=0}else{x.misses=Math.max(1,x.misses);scheduleRepeat(current)}}}else{t.wrong++;S.currentRun=0;S.score[current.id]=Math.max(0,n-1);x.misses=Math.min(5,(x.misses||0)+1);x.recovery=0;scheduleRepeat(current)}S.smart[current.id]=x;S.records.bestRun=Math.max(S.records.bestRun||0,S.currentRun||0);S.records.bestDay=Math.max(S.records.bestDay||0,t.right);save();if(S.records.bestRun>oldRun&&S.records.bestRun>1)showRecord('🏆 Neuer Serienrekord: '+S.records.bestRun+'!');else if(S.records.bestDay>oldDay&&oldDay>0)showRecord('⭐ Neuer Tagesrekord: '+S.records.bestDay+' richtige!')}function continueRound(){clearTimeout(advanceTimer);idx++;next()}function pick(el,ok){[...document.querySelectorAll('.choice')].forEach(b=>b.disabled=true);el.style.background=ok?'#059669':'#be123c';mark(ok);document.querySelector('#answer').classList.remove('hide');let sx=smart(current.id);document.querySelector('#answer').onclick=null;document.querySelector('#answer').innerHTML=ok?('🔥 Richtig! <button class="speakbtn" onclick="event.stopPropagation();speak(current.es)" aria-label="Lösung vorlesen">🔊</button>'):('❌ Nicht ganz. Richtig wäre: <b>'+escHtml(currentReverse?current.de:current.es)+'</b> <button class="speakbtn" onclick="event.stopPropagation();speak(current.es)" aria-label="Lösung vorlesen">🔊</button>');if(ok){advanceTimer=setTimeout(continueRound,1600)}else{document.querySelector('#actions').innerHTML='<button class="btn" onclick="continueRound()">Weiter →</button>'}}function checkWrite(){let inp=document.querySelector('#typed'),ok=norm(inp.value)===norm(current.es);mark(ok);document.querySelector('#answer').classList.remove('hide');let sx=smart(current.id);document.querySelector('#answer').textContent=ok?'🔥 Treffer!':('❌ Richtig wäre: '+current.es+' 🔊');if(!ok)document.querySelector('#answer').onclick=()=>speak(current.es);document.querySelector('#actions').innerHTML='<button class="btn" onclick="continueRound()">Weiter →</button>'}function revealCard(r){document.querySelector('#answer').classList.remove('hide');document.querySelector('#answer').innerHTML=(r?current.de:current.es)+(r?'':' <button class="speakbtn" onclick="event.stopPropagation();speak(current.es)">🔊</button>');document.querySelector('#actions').innerHTML='<button class="btn bad" onclick="mark(false);continueRound()">😵 Noch nicht</button><button class="btn ok" onclick="mark(true);continueRound()">😎 Gewusst</button>'}function speak(text){if(!('speechSynthesis' in window)||!text)return;window.speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(String(text));u.lang=LANG==='en'?'en-GB':'es-ES';u.rate=.86;let vs=window.speechSynthesis.getVoices();let code=LANG==='en'?'en-gb':'es-es',prefix=LANG==='en'?'en':'es';let v=vs.find(x=>x.lang&&x.lang.toLowerCase()===code)||vs.find(x=>x.lang&&x.lang.toLowerCase().startsWith(prefix));if(v)u.voice=v;window.speechSynthesis.speak(u)}function home(){document.querySelector('#game').classList.remove('active');document.querySelector('#homeview').classList.remove('hidden');document.querySelector('#homeExtras').classList.remove('hide');window.scrollTo(0,0)}
+function pool(){let t=document.querySelector('#topic').value;return V.filter(v=>t==='all'||(t==='__test162'&&LANG==='es'&&v.t==='🎒 Unidad 1')||(t==='school'&&v.t.startsWith('🎒'))||(t==='unit2'&&v.t.startsWith('📘 Unit 2 ·'))||v.t===t)}function shuffle(a){return [...a].sort(()=>Math.random()-.5)}function smart(id){return S.smart[id]||{misses:0,recovery:0}}function priority(v){let x=smart(v.id);return 1+(x.misses*4)+(x.misses>0?(3-x.recovery)*2:0)}function weightedDeck(p,n){let bag=[];p.forEach(v=>{let w=Math.min(12,priority(v));for(let i=0;i<w;i++)bag.push(v)});let out=[],used={};while(out.length<n&&bag.length){let v=bag[Math.floor(Math.random()*bag.length)];let key=v.id;if(!used[key]||Object.keys(used).length>=p.length){out.push(v);used[key]=1}bag=bag.filter(x=>x.id!==key)}if(out.length<n)out.push(...shuffle(p).slice(0,n-out.length));return out.slice(0,n)}function scheduleRepeat(v){let gap=3+Math.floor(Math.random()*4),pos=Math.min(deck.length,idx+gap+1);deck.splice(pos,0,v)}function start(m){mode=m;let p=pool();if(m==='problems'){let q=problems();p=q.length?q:p}if(m==='boss'){let b=p.filter(v=>smart(v.id).misses>0).sort((a,b)=>priority(b)-priority(a));p=b.length?b:p.filter(v=>state(v.id)<2);if(!p.length)p=pool()}deck=(m==='cards'?weightedDeck(p,20):weightedDeck(p,10));idx=0;roundAnswered=0;roundCorrect=0;document.querySelector('#homeview').classList.add('hidden');document.querySelector('#homeExtras').classList.add('hide');document.querySelector('#game').classList.add('active');window.scrollTo(0,0);next()}function next(){let limit=(mode==='cards'?20:10);if(roundAnswered>=limit||idx>=deck.length){document.querySelector('#question').textContent='🏆 Runde geschafft!';document.querySelector('#mc').innerHTML='';document.querySelector('#typed').classList.add('hide');document.querySelector('#answer').classList.remove('hide');document.querySelector('#answer').innerHTML=(mode==='cards'?'Kartenrunde beendet':'<b>'+roundCorrect+' von '+limit+' richtig</b>')+'<br>Runde gespeichert ✓';touch();save();document.querySelector('#actions').innerHTML='<button class="btn" onclick="start(mode)">Nochmal 🔥</button>';return}current=deck[idx];document.querySelector('#counter').textContent=(Math.min(roundAnswered+1,limit))+' / '+limit;document.querySelector('#lessonName').textContent=current.t;document.querySelector('#answer').classList.add('hide');document.querySelector('#typed').classList.add('hide');document.querySelector('#mc').innerHTML='';document.querySelector('#actions').innerHTML='';let reverse=Math.random()<.45;const isNumber=(current.t==='Numbers'||current.t==='Zahlen');if(isNumber) reverse=true;currentReverse=reverse;if(mode==='cards'){document.querySelector('#question').innerHTML=(reverse?current.es:current.de)+' <button class="speakbtn" onclick="speak(current.es)">🔊</button>';document.querySelector('#actions').innerHTML='<button class="btn" onclick="revealCard('+(reverse?1:0)+')">Antwort zeigen 👀</button>'}else if(mode==='write'||mode==='boss'){document.querySelector('#question').innerHTML='🇩🇪 '+escHtml(current.de)+' <button class="speakbtn" onclick="speak(current.es)" aria-label="Lösung vorlesen">🔊</button>';let inp=document.querySelector('#typed');inp.classList.remove('hide');inp.value='';inp.focus();document.querySelector('#actions').innerHTML='<button class="btn" onclick="checkWrite()">Check ✓</button>';inp.onkeydown=e=>{if(e.key==='Enter')checkWrite()}}else{document.querySelector('#question').innerHTML=(reverse?(LANG==='en'?'🇬🇧 ':'🇪🇸 ')+escHtml(current.es):'🇩🇪 '+escHtml(current.de));let ans=reverse?current.de:current.es;let distractPool=pool().filter(v=>v.id!==current.id);if(current.t==='Numbers'||current.t==='Zahlen')distractPool=V.filter(v=>v.id!==current.id&&v.t===current.t);let opts=shuffle([ans,...shuffle(distractPool).slice(0,3).map(v=>reverse?v.de:v.es)]);document.querySelector('#mc').innerHTML=opts.map(o=>'<button class="btn choice" onclick="pick(this,'+JSON.stringify(o===ans)+')">'+o+'</button>').join('')}}function mark(ok){arcadeRecordAnswer(ok);roundAnswered++;if(ok)roundCorrect++;let t=todayStats(),oldRun=S.records.bestRun||0,oldDay=S.records.bestDay||0;let n=state(current.id),x=smart(current.id);if(ok){t.right++;S.currentRun=(S.currentRun||0)+1;S.score[current.id]=Math.max(0,Math.min(4,n+1));if(x.misses>0){x.recovery=(x.recovery||0)+1;if(x.recovery>=3){x.misses=0;x.recovery=0}else{x.misses=Math.max(1,x.misses);scheduleRepeat(current)}}}else{t.wrong++;S.currentRun=0;S.score[current.id]=Math.max(0,n-1);x.misses=Math.min(5,(x.misses||0)+1);x.recovery=0;scheduleRepeat(current)}S.smart[current.id]=x;S.records.bestRun=Math.max(S.records.bestRun||0,S.currentRun||0);S.records.bestDay=Math.max(S.records.bestDay||0,t.right);save();if(S.records.bestRun>oldRun&&S.records.bestRun>1)showRecord('🏆 Neuer Serienrekord: '+S.records.bestRun+'!');else if(S.records.bestDay>oldDay&&oldDay>0)showRecord('⭐ Neuer Tagesrekord: '+S.records.bestDay+' richtige!')}function continueRound(){clearTimeout(advanceTimer);idx++;next()}function pick(el,ok){[...document.querySelectorAll('.choice')].forEach(b=>b.disabled=true);el.style.background=ok?'#059669':'#be123c';mark(ok);document.querySelector('#answer').classList.remove('hide');let sx=smart(current.id);document.querySelector('#answer').onclick=null;document.querySelector('#answer').innerHTML=ok?('🔥 Richtig! <button class="speakbtn" onclick="event.stopPropagation();speak(current.es)" aria-label="Lösung vorlesen">🔊</button>'):('❌ Nicht ganz. Richtig wäre: <b>'+escHtml(currentReverse?current.de:current.es)+'</b> <button class="speakbtn" onclick="event.stopPropagation();speak(current.es)" aria-label="Lösung vorlesen">🔊</button>');if(ok){advanceTimer=setTimeout(continueRound,1600)}else{document.querySelector('#actions').innerHTML='<button class="btn" onclick="continueRound()">Weiter →</button>'}}function checkWrite(){let inp=document.querySelector('#typed'),ok=norm(inp.value)===norm(current.es);mark(ok);document.querySelector('#answer').classList.remove('hide');let sx=smart(current.id);document.querySelector('#answer').textContent=ok?'🔥 Treffer!':('❌ Richtig wäre: '+current.es+' 🔊');if(!ok)document.querySelector('#answer').onclick=()=>speak(current.es);document.querySelector('#actions').innerHTML='<button class="btn" onclick="continueRound()">Weiter →</button>'}function revealCard(r){document.querySelector('#answer').classList.remove('hide');document.querySelector('#answer').innerHTML=(r?current.de:current.es)+(r?'':' <button class="speakbtn" onclick="event.stopPropagation();speak(current.es)">🔊</button>');document.querySelector('#actions').innerHTML='<button class="btn bad" onclick="mark(false);continueRound()">😵 Noch nicht</button><button class="btn ok" onclick="mark(true);continueRound()">😎 Gewusst</button>'}function speak(text){if(!text)return;if(window.VamosNative&&typeof window.VamosNative.speakText==='function'){window.VamosNative.speakText(String(text),LANG==='en'?'en-GB':'es-ES');return}if(!('speechSynthesis' in window))return;window.speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(String(text));u.lang=LANG==='en'?'en-GB':'es-ES';u.rate=.86;let vs=window.speechSynthesis.getVoices();let code=LANG==='en'?'en-gb':'es-es',prefix=LANG==='en'?'en':'es';let v=vs.find(x=>x.lang&&x.lang.toLowerCase()===code)||vs.find(x=>x.lang&&x.lang.toLowerCase().startsWith(prefix));if(v)u.voice=v;window.speechSynthesis.speak(u)}function home(){document.querySelector('#game').classList.remove('active');document.querySelector('#homeview').classList.remove('hidden');document.querySelector('#homeExtras').classList.remove('hide');window.scrollTo(0,0)}
 let examIndex=0,examCorrect=0,examCurrent=null,examAnswered=false;
 const EXAM_ARTICLES=[['el parque','los parques'],['el hotel','los hoteles'],['el centro','los centros'],['el zoo','los zoos'],['el restaurante','los restaurantes'],['el museo','los museos'],['la plaza','las plazas'],['la casa','las casas'],['el gato','los gatos'],['la rana','las ranas']];
 const EXAM_NAMES=['Lucía','Diego','Sofía','Mateo','Elena','Nico'];
@@ -278,7 +412,7 @@ function memoryPick(el,ok){[...document.querySelectorAll('#memoryStage .choice')
 function memoryFinish(){let old=S.records.memoryBest||0;if(memoryCorrect>old){S.records.memoryBest=memoryCorrect;save();showRecord('🧠 Neuer Memory-Rekord: '+memoryCorrect+'/10!')}document.querySelector('#memoryBest').textContent=S.records.memoryBest||0;document.querySelector('#memoryCounter').textContent='Fertig';document.querySelector('#memoryStage').innerHTML='<div class="memoryPrompt"><div class="sub">RUNDE GESCHAFFT</div><div class="big">🧠 '+memoryCorrect+' / 10</div><div>'+(memoryCorrect>=8?'Stark gemerkt! 🔥':memoryCorrect>=5?'Gute Runde – nochmal?':'Nochmal antreten und Rekord knacken!')+'</div><div style="margin-top:18px"><button class="btn" onclick="startMemory()">Nochmal 🔥</button><button class="btn alt" onclick="closeMemory()">Zur Startseite</button></div></div>'}
 function openVocabBook(){document.querySelector('#vocabbook').classList.add('active');document.querySelector('#vocabSearch').value='';renderVocabBook();document.querySelector('#vocabbook').scrollTo(0,0)}function closeVocabBook(){window.speechSynthesis&&window.speechSynthesis.cancel();document.querySelector('#vocabbook').classList.remove('active')}function escHtml(x){return String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function renderVocabBook(){let q=norm(document.querySelector('#vocabSearch').value||'');let list=V.filter(v=>!q||norm(v.de).includes(q)||norm(v.es).includes(q));list=[...list].sort((a,b)=>a.t.localeCompare(b.t,'de')||a.de.localeCompare(b.de,'de'));document.querySelector('#vocabCount').textContent=list.length+' von '+V.length+' Einträgen';let last='',html='';for(let v of list){if(v.t!==last){last=v.t;html+='<tr class="groupRow"><td colspan="2">'+escHtml(v.t)+'</td></tr>'}html+='<tr><td>'+escHtml(v.de)+'</td><td><span class="vocab-es">'+escHtml(v.es)+'</span><button class="miniSpeak" data-speak="'+encodeURIComponent(v.es)+'" onclick="speak(decodeURIComponent(this.dataset.speak))" aria-label="Lösung vorlesen">🔊</button></td></tr>'}document.querySelector('#vocabRows').innerHTML=html||'<tr><td colspan="2" class="small">Keine Vokabel gefunden.</td></tr>'}function openProblems(){document.querySelector('#problemview').classList.add('active');renderProblems();document.querySelector('#problemview').scrollTo(0,0)}function closeProblems(){document.querySelector('#problemview').classList.remove('active')}function renderProblems(){let p=problems(),box=document.querySelector('#problemRows');document.querySelector('#problemPractice').style.display=p.length?'inline-block':'none';box.innerHTML=p.length?p.map(v=>'<div class="problemrow"><div class="words"><b>'+escHtml(v.de)+'</b><span>'+escHtml(v.es)+'</span></div><button class="miniSpeak" onclick="speak(decodeURIComponent(this.dataset.speak))" data-speak="'+encodeURIComponent(v.es)+'">🔊</button></div>').join(''):'<div class="feedback">🎉 Aktuell keine Problemwörter. Stark!</div>'}function exportSave(){let b=new Blob([JSON.stringify(S,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='sprachen-trainer-lernstand.json';a.click()}function importSave(e){let f=e.target.files[0];if(!f)return;let r=new FileReader;r.onload=()=>{try{let d=JSON.parse(r.result);if(d.es||d.en){ROOT=d;ROOT.es=prepState(ROOT.es);ROOT.en=prepState(ROOT.en);S=ROOT[LANG]}else{S=prepState(d);ROOT[LANG]=S}save();alert('Lernstand wiederhergestellt 👍')}catch{alert('Datei konnte nicht gelesen werden.')}};r.readAsText(f)}
 function rebuildTopics(){let sel=document.querySelector('#topic');sel.innerHTML='';if(LANG==='es'){sel.innerHTML='<option value="__test162">🇪🇸 Test 27.11. – Seite 162 (Unidad 1)</option><option value="🔥 Klassenarbeit">🔥 Klassenarbeit – aktueller Prüfungsstoff</option><option value="school">🎒 Aktueller Schulstoff (Unidad 1 + 2)</option><option value="🎒 Unidad 1">📘 Nur Unidad 1</option><option value="🎒 Unidad 2">📙 Nur Unidad 2</option><option value="all">🌎 Alles mischen</option>';[...new Set(V.map(v=>v.t))].filter(t=>!t.startsWith('🎒')&&t!=='🔥 Klassenarbeit').forEach(t=>sel.insertAdjacentHTML('beforeend','<option>'+escHtml(t)+'</option>'))}else{sel.innerHTML='<option value="unit2">📘 Neu: Unit 2 Manchester (S. 216–218)</option><option value="all">🇬🇧 Alle englischen Vokabeln</option>';[...new Set(V.map(v=>v.t))].forEach(t=>sel.insertAdjacentHTML('beforeend','<option>'+escHtml(t)+'</option>'))}}
-function applyLanguageUI(){document.body.classList.toggle('enmode',LANG==='en');document.querySelector('#langEs').classList.toggle('active',LANG==='es');document.querySelector('#langEn').classList.toggle('active',LANG==='en');let lt=document.querySelector('#langToggle');if(lt)lt.checked=LANG==='en';document.querySelector('#appTitle').textContent=LANG==='es'?'🇪🇸 ¡Vamos!':'🇬🇧 Let’s go!';document.querySelector('#appTag').textContent=LANG==='es'?'Spanisch lernen, ohne Lern-Marathon.':'Englisch lernen, ohne Lern-Marathon.';document.querySelector('#helloTitle').textContent=LANG==='es'?'Hola Paul 👋':'Hi Paul 👋';document.querySelector('#examHomeTitle').textContent=LANG==='es'?'🔥 KLASSENARBEIT':'🔥 ENGLISH CHALLENGE';document.querySelector('#examHomeSub').textContent=LANG==='es'?'10 Aufgaben · Vokabeln · Lücken · Artikel · Plural · Textverständnis':'10 Aufgaben · Wörter · Lückensätze · Grammatik · Textverständnis';document.querySelector('#examViewTitle').textContent=LANG==='es'?'🔥 KLASSENARBEIT':'🔥 ENGLISH CHALLENGE';document.querySelector('#setupTitle').textContent=LANG==='es'?'🎮 Spanisch-Setup':'🎮 Englisch-Setup';document.querySelector('#bookSub').textContent=LANG==='es'?'Alle Wörter · Deutsch ↔ Spanisch · Suche · 🔊 Aussprache':'Alle Wörter · Deutsch ↔ Englisch · Suche · 🔊 Aussprache';document.querySelector('#targetHead').textContent=LANG==='es'?'Spanisch':'Englisch';document.querySelector('#vocabSearch').placeholder=LANG==='es'?'🔎 Deutsch oder Spanisch suchen …':'🔎 Deutsch oder Englisch suchen …';document.querySelector('#footerText').textContent=(LANG==='es'?'¡Vamos!':'Let’s go!')+' • kurze Runs statt Lern-Marathon 🚀';rebuildTopics();renderStats()}
+function applyLanguageUI(){document.body.classList.toggle('enmode',LANG==='en');document.querySelector('#langEs').classList.toggle('active',LANG==='es');document.querySelector('#langEn').classList.toggle('active',LANG==='en');let lt=document.querySelector('#langToggle');if(lt)lt.checked=LANG==='en';document.querySelector('#appTitle').textContent='¡Vamos!';document.querySelector('#appTag').textContent=LANG==='es'?'Spanisch – jeden Tag ein Stück besser.':'Englisch – jeden Tag ein Stück besser.';document.querySelector('#helloTitle').textContent=LANG==='es'?'Hola Paul 👋':'Hi Paul 👋';document.querySelector('#examHomeTitle').textContent=LANG==='es'?'🔥 KLASSENARBEIT':'🔥 ENGLISH CHALLENGE';document.querySelector('#examHomeSub').textContent=LANG==='es'?'10 Aufgaben · Vokabeln · Lücken · Artikel · Plural · Textverständnis':'10 Aufgaben · Wörter · Lückensätze · Grammatik · Textverständnis';document.querySelector('#examViewTitle').textContent=LANG==='es'?'🔥 KLASSENARBEIT':'🔥 ENGLISH CHALLENGE';document.querySelector('#setupTitle').textContent=LANG==='es'?'🎮 Spanisch-Setup':'🎮 Englisch-Setup';document.querySelector('#bookSub').textContent=LANG==='es'?'Alle Wörter · Deutsch ↔ Spanisch · Suche · 🔊 Aussprache':'Alle Wörter · Deutsch ↔ Englisch · Suche · 🔊 Aussprache';document.querySelector('#targetHead').textContent=LANG==='es'?'Spanisch':'Englisch';document.querySelector('#vocabSearch').placeholder=LANG==='es'?'🔎 Deutsch oder Spanisch suchen …':'🔎 Deutsch oder Englisch suchen …';document.querySelector('#footerText').textContent=(LANG==='es'?'¡Vamos!':'Let’s go!')+' • kurze Runs statt Lern-Marathon 🚀';rebuildTopics();renderStats()}
 function switchLanguage(lang){if(lang!=='es'&&lang!=='en')return;if(lang===LANG){applyLanguageUI();return}clearTimeout(advanceTimer);try{if(window.speechSynthesis)window.speechSynthesis.cancel()}catch(e){}ROOT[LANG]=S;LANG=lang;V=LANG==='en'?ENGLISH_V:SPANISH_V;S=prepState(ROOT[LANG]);ROOT[LANG]=S;localStorage.setItem('vamosLang',LANG);localStorage.setItem('vamosBilingual',JSON.stringify(ROOT));applyLanguageUI();['game','examview','memoryview','vocabbook','problemview'].forEach(id=>{let el=document.getElementById(id);if(el)el.classList.remove('active')});let hv=document.getElementById('homeview');if(hv)hv.classList.remove('hidden');let he=document.getElementById('homeExtras');if(he)he.classList.remove('hide');try{window.scrollTo(0,0)}catch(e){}}
 
 // Talk Mode: independently scoped; existing learning progress and save keys stay untouched.
@@ -438,6 +572,225 @@ function smartcardsFinish(message){document.getElementById('smartcardsFlipper').
 function smartcardsExitStudy(){document.querySelector('.smartcards-paperstack').hidden=false;document.getElementById('smartcardsStudy').hidden=true;document.getElementById('smartcardsMenu').hidden=false;smartcardsSave();smartcardsUpdateStats()}
 function smartcardsExport(){smartcardsSave();const d=JSON.stringify({type:'vamos-smartcards',version:1,cards:smartcardsData},null,2);const u=URL.createObjectURL(new Blob([d],{type:'application/json'}));const a=document.createElement('a');a.href=u;a.download='vamos-smartcards-sicherung.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
 function smartcardsImport(event){const f=event.target.files?.[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{const d=JSON.parse(reader.result);if(d.type!=='vamos-smartcards'||!d.cards||typeof d.cards!=='object'||Array.isArray(d.cards))throw Error('Ungültige Sicherung');if(!confirm('Gespeicherten Karteikartenstand durch diese Sicherung ersetzen?'))return;smartcardsData=d.cards;smartcardsSave();smartcardsUpdateStats();alert('Karteikartenstand wiederhergestellt ✓')}catch(e){alert('Das ist keine gültige SmartCards-Sicherung.')}finally{event.target.value=''}};reader.readAsText(f)}
+
+
+// Compact four-tab dashboard. Reuses existing widgets and their listeners/IDs.
+function vamosInitCompactDashboard(){
+ const home=document.getElementById('homeview');
+ if(!home||document.getElementById('vamosBottomNav'))return;
+ const panes={};
+ const labels=[['today','🏠','Start'],['learn','📚','Lernen'],['arcade','🎮','Arcade'],['more','⚙️','Mehr']];
+ for(const [id] of labels){
+  let pane=document.createElement('section');pane.id='vamos'+id[0].toUpperCase()+id.slice(1);
+  pane.className='vamos-pane';pane.hidden=id!=='today';pane.setAttribute('role','tabpanel');
+  pane.setAttribute('aria-labelledby','vamos-tab-'+id);panes[id]=pane;home.appendChild(pane);
+ }
+ const move=(selector,target)=>{const el=document.querySelector(selector);if(el)panes[target].appendChild(el);return el};
+ // Today: one test mission, today's numbers, and two quick actions.
+ const intro=document.createElement('div');intro.className='vamos-quick-actions';
+ intro.innerHTML='<button type="button" onclick="smartcardsOpen()">📇 Karteikarten</button><button type="button" onclick="start(\'quick\')">⚡ Quick Play</button>';
+ panes.today.appendChild(intro);
+ move('.test162','today');const day=move('#dayCard','today');
+ if(day){const r=day.querySelector('.records');if(r){const extra=document.createElement('details');extra.className='vamos-extra-records';extra.innerHTML='<summary>🏆 Rekorde anzeigen</summary>';extra.appendChild(r);day.appendChild(extra)}}
+ const heading=(pane,t)=>{const h=document.createElement('h2');h.className='vamos-pane-title';h.textContent=t;pane.appendChild(h)};
+ heading(panes.learn,'Wähle dein Training');
+ const extras=document.getElementById('homeExtras');
+ if(extras){
+  const sc=extras.querySelector('.card');
+  if(sc){
+   const topic=document.createElement('div');topic.className='vamos-topic';
+   for(const node of [sc.querySelector('#setupTitle'),sc.querySelector('p.small'),sc.querySelector('#topic')]){if(node)topic.appendChild(node)}
+   panes.learn.appendChild(topic);
+   const back=document.createElement('b');back.textContent='💾 Datensicherung';sc.insertBefore(back,sc.firstChild);
+  }
+ }
+ move('.smartcards-entry','learn');move('.quest-tiles','learn');move('.examquick','learn');move('.grid','learn');move('.bookbtn','learn');
+ heading(panes.arcade,'Spielen & Belohnungen');move('.arcade-link','arcade');
+ const help=document.createElement('p');help.className='arcade-help';help.textContent='30 Minuten aktives Lernen bringen 100 Vamos Coins. Damit lassen sich 10 Minuten Spielzeit freischalten.';panes.arcade.appendChild(help);
+ heading(panes.more,'Fortschritt & Einstellungen');const prog=move('.homeDetails','more');if(prog)prog.open=true;
+ if(extras)panes.more.appendChild(extras);
+ // Older dashboard offered the same modes in several places. Hide only decorative duplicates.
+ home.querySelectorAll('.quest-banner,.quick,.sectionTitle,.dash-eyebrow').forEach(el=>el.remove());
+ const nav=document.createElement('nav');nav.id='vamosBottomNav';nav.className='vamos-nav';nav.setAttribute('role','tablist');nav.setAttribute('aria-label','¡Vamos! Hauptnavigation');
+ nav.innerHTML=labels.map(([id,ico,title])=>'<button type="button" role="tab" id="vamos-tab-'+id+'" aria-controls="vamos'+id[0].toUpperCase()+id.slice(1)+'" aria-selected="'+(id==='today'?'true':'false')+'" onclick="vamosShowTab(\''+id+'\')"><span class="navicon" aria-hidden="true">'+ico+'</span><span>'+title+'</span></button>').join('');
+ home.appendChild(nav);
+}
+function vamosShowTab(tab){
+ if(!['today','learn','arcade','more'].includes(tab))return;
+ for(const key of ['today','learn','arcade','more']){
+  const el=document.getElementById('vamos'+key[0].toUpperCase()+key.slice(1));
+  if(el)el.hidden=key!==tab;
+  const b=document.getElementById('vamos-tab-'+key);
+  if(b){b.setAttribute('aria-selected',String(key===tab));b.tabIndex=key===tab?0:-1}
+ }
+ window.scrollTo(0,0);
+}
+vamosInitCompactDashboard();
+
+// Premium UI for design #1. No new persisted keys or invented levels.
+function vamosInitPremium(){
+ const today=document.getElementById('vamosToday');
+ const more=document.getElementById('vamosMore');
+ const learn=document.getElementById('vamosLearn');
+ if(!today||document.getElementById('vamosPremiumWelcome'))return;
+ const oldIntro=today.querySelector('.vamos-quick-actions');
+ if(oldIntro)oldIntro.remove();
+ const day=today.querySelector('#dayCard');if(day&&more)more.insertBefore(day,more.children[1]||null);
+ const test=today.querySelector('.test162');if(test&&learn)learn.insertBefore(test,learn.children[1]||null);
+ const welcome=document.createElement('section');welcome.className='vamos-premium-welcome';welcome.id='vamosPremiumWelcome';
+ welcome.innerHTML='<div><h2 id="premiumHello">Hola, Paul 👋</h2><p>Bereit für deine heutige Lerneinheit?</p></div><div class="vamos-premium-coins"><b id="premiumCoins">0 🪙</b><span>VAMOS COINS</span></div>';
+ const meter=document.createElement('section');meter.className='vamos-premium-meter';meter.setAttribute('aria-label','Dein Lernfortschritt');
+ meter.innerHTML='<div class="vamos-premium-medal">✦</div><div class="vamos-premium-meterinfo"><div class="label"><b>Sicher gelernt</b><span id="premiumMastered">0 / 0 Wörter</span></div><div class="vamos-premium-track"><div id="premiumFill" class="vamos-premium-fill"></div></div></div>';
+ const path=document.createElement('section');path.className='vamos-premium-path';
+ path.innerHTML='<div class="vamos-premium-heading"><h2>✦ Heute auf deinem Lernpfad</h2><span class="small" id="premiumPathLabel">Dein Training</span></div>'+
+ '<button type="button" class="vamos-premium-step" data-action="review"><span class="symbol">📖</span><span class="details"><strong>Kurz-Review</strong><small>10 Fragen zum Wiederholen</small></span><span class="arrow">›</span></button>'+
+ '<button type="button" class="vamos-premium-step primary" onclick="smartcardsOpen()"><span class="symbol">📇</span><span class="details"><strong>SmartCards</strong><small id="premiumCardInfo">Vokabeln mit echten Karten lernen</small></span><span class="arrow">▶ Lernen</span></button>'+
+ '<button type="button" class="vamos-premium-step" onclick="vamosPremiumWriting()"><span class="symbol">🎓</span><span class="details"><strong>Wörter sicher können</strong><small>Übersetzungen selbst schreiben</small></span><span class="arrow">›</span></button>';
+ path.querySelector('[data-action=review]').addEventListener('click',()=>start('quick'));
+ const challenge=document.createElement('section');challenge.className='vamos-premium-challenge';
+ challenge.innerHTML='<span class="symbol">🏔️</span><span class="text"><strong>Challenge-Modus</strong><small>10 Aufgaben – zeig, was du kannst!</small></span><button type="button" onclick="startExam()">Starten ›</button>';
+ const summary=document.createElement('section');summary.className='vamos-premium-summary';
+ summary.innerHTML='<h3>▥ Dein heutiger Fortschritt</h3><div class="vamos-premium-values"><div><strong id="premiumRight">0</strong><small>Richtig</small></div><div><strong id="premiumHit">–</strong><small>Trefferquote</small></div><div><strong id="premiumSeconds">00:00</strong><small>Lernzeit bis Coins</small></div></div>';
+ today.prepend(summary);today.prepend(challenge);today.prepend(path);today.prepend(meter);today.prepend(welcome);
+ const navIcon={today:'<svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7v10h-6v-6H9v6H3z"/></svg>',learn:'<svg viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-9-1v15c4-1 7-1 9 1 2-2 5-2 9-1V4c-3-1-6-1-9 1z"/><path d="M12 5v15"/></svg>',arcade:'<svg viewBox="0 0 24 24"><path d="M7 8h10a4 4 0 0 1 3.9 3l1.2 7a2 2 0 0 1-3.2 2l-3-2H8l-3 2a2 2 0 0 1-3.2-2L3 11a4 4 0 0 1 4-3z"/><path d="M7 12v5M4.5 14.5h5M16 13h.01M19 15h.01"/></svg>',more:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>'};
+ for(const key of Object.keys(navIcon)){const e=document.querySelector('#vamos-tab-'+key+' .navicon');if(e)e.innerHTML=navIcon[key]}
+ vamosPremiumUpdate();
+}
+function vamosPremiumWriting(){if(LANG==='es'){vamosTest162Write()}else{start('write')}}
+function vamosPremiumUpdate(){
+ if(!document.getElementById('premiumMastered'))return;
+ const n=V.filter(v=>state(v.id)>=4).length,total=V.length||1;
+ document.getElementById('premiumHello').textContent=(LANG==='es'?'Hola, Paul':'Hi, Paul')+' 👋';
+ document.getElementById('premiumMastered').textContent=n+' / '+V.length+' Wörter';
+ document.getElementById('premiumFill').style.width=Math.max(0,Math.min(100,n/total*100))+'%';
+ document.getElementById('premiumCoins').textContent=(ARCADE.coins||0)+' 🪙';
+ const s=todayStats(),count=s.right+s.wrong;
+ document.getElementById('premiumRight').textContent=s.right;
+ document.getElementById('premiumHit').textContent=count?Math.round(s.right/count*100)+' %':'–';
+ document.getElementById('premiumSeconds').textContent=arcadeFmt(ARCADE.studySeconds);
+ const unit=LANG==='es'?'Unidad 1':'Unit 2 Manchester';
+ const inUnit=V.filter(v=>LANG==='es'?v.t==='🎒 Unidad 1':v.t.startsWith('📘 Unit 2 ·')).length;
+ document.getElementById('premiumCardInfo').textContent=inUnit+' Vokabeln · '+unit;
+ document.getElementById('premiumPathLabel').textContent=LANG==='es'?'🇪🇸 Spanisch':'🇬🇧 Englisch';
+}
+vamosInitPremium();
+
+// One combined backup for both languages, SmartCards and Arcade.
+// This stays compatible with the original individual JSON backup files.
+function vamosBackupStatus(message){
+ const el=document.getElementById('vamosAllBackupStatus');
+ if(el)el.textContent=message;
+}
+window.__vamosDownloadNotice=function(message){vamosBackupStatus(String(message||''))};
+function vamosBackupAll(){
+ try{
+  ROOT[LANG]=S;
+  const data={
+   type:'vamos-complete-backup',version:1,
+   createdAt:new Date().toISOString(),
+   data:{language:LANG,learning:ROOT,arcade:ARCADE,smartcards:smartcardsData}
+  };
+  // Check that the complete document is valid JSON before requesting the download.
+  const raw=JSON.stringify(data,null,2);
+  const check=JSON.parse(raw);
+  if(!check.data||!check.data.learning||!check.data.arcade||!check.data.smartcards)
+   throw new Error('Sicherungsdaten unvollständig');
+  const blob=new Blob([raw],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download='vamos-komplett-sicherung-'+new Date().toISOString().slice(0,10)+'.json';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),15000);
+  vamosBackupStatus(window.VamosNative?'Sicherung wird gespeichert …':'Download gestartet. Bitte im Ordner Downloads prüfen.');
+ }catch(e){
+  console.error('Komplettsicherung fehlgeschlagen',e);
+  vamosBackupStatus('Sicherung fehlgeschlagen – bitte erneut versuchen.');
+ }
+}
+function vamosRestoreAll(event){
+ const input=event.target;
+ const file=input.files&&input.files[0];
+ if(!file)return;
+ if(file.size>5*1024*1024){alert('Die Sicherungsdatei ist zu groß.');input.value='';return}
+ const reader=new FileReader();
+ reader.onerror=()=>{alert('Datei konnte nicht geöffnet werden.');input.value=''};
+ reader.onload=()=>{
+  try{
+   const doc=JSON.parse(String(reader.result));
+   if(doc.type!=='vamos-complete-backup'||doc.version!==1||!doc.data)
+    throw new Error('Kein vollständiges ¡Vamos!-Backup');
+   const d=doc.data,learn=d.learning;
+   const validObject=x=>x&&typeof x==='object'&&!Array.isArray(x);
+   if(!validObject(learn)||!validObject(learn.es)||!validObject(learn.en)||
+      !validObject(learn.es.score)||!validObject(learn.en.score)||
+      !validObject(d.arcade)||!Number.isFinite(d.arcade.coins)||
+      !validObject(d.smartcards)||!['es','en'].includes(d.language))
+    throw new Error('Die Sicherung enthält nicht alle benötigten Bereiche.');
+   if(!confirm('Alle aktuellen Lernstände, SmartCards, Coins und Spielstände auf diesem Gerät werden durch die Sicherung ersetzt. Fortfahren?'))return;
+   const changes={
+    vamosBilingual:JSON.stringify(learn),
+    vamosSave:JSON.stringify(learn.es),
+    vamosLang:d.language,
+    vamosArcadeV1:JSON.stringify(d.arcade),
+    vamosSmartcardsV1:JSON.stringify(d.smartcards)
+   };
+   const previous={};
+   for(const k in changes)previous[k]=localStorage.getItem(k);
+   try{
+    for(const k in changes)localStorage.setItem(k,changes[k]);
+   }catch(err){
+    for(const k in previous){try{if(previous[k]===null)localStorage.removeItem(k);else localStorage.setItem(k,previous[k])}catch(ignore){}}
+    throw err;
+   }
+   alert('Alles wiederhergestellt! ¡Vamos! wird neu gestartet.');
+   location.reload();
+  }catch(e){
+   console.error('Komplettwiederherstellung fehlgeschlagen',e);
+   alert('Wiederherstellung nicht möglich: '+e.message);
+  }finally{input.value=''}
+ };
+ reader.readAsText(file);
+}
+function vamosInitCombinedBackup(){
+ const more=document.getElementById('vamosMore');
+ if(!more||document.getElementById('vamosCompleteBackup'))return;
+ const panel=document.createElement('section');
+ panel.id='vamosCompleteBackup';panel.className='vamos-complete-backup';
+ panel.innerHTML='<h3>💾 Deine Daten sichern</h3>'+
+  '<p>Ein Klick sichert alles zusammen: Englisch, Spanisch, Karteikarten, Coins, Spielstände und Eltern-Einstellungen. Die Datei bleibt auf deinem Gerät.</p>'+
+  '<div class="vamos-backup-actions">'+
+  '<button type="button" id="vamosAllExport">⬇️ Alles sichern</button>'+
+  '<label>📂 Alles wiederherstellen<input type="file" id="vamosAllImport" accept=".json,application/json"></label></div>'+
+  '<div id="vamosAllBackupStatus" role="status" aria-live="polite">Noch keine Komplettsicherung erstellt.</div>';
+ more.insertBefore(panel,more.children[1]||null);
+ panel.querySelector('#vamosAllExport').addEventListener('click',vamosBackupAll);
+ panel.querySelector('#vamosAllImport').addEventListener('change',vamosRestoreAll);
+ // Keep old individual backups accessible for compatibility, but out of the way.
+ const legacy=document.querySelector('#homeExtras .card');
+ if(legacy){
+  const oldExport=legacy.querySelector('button[onclick="exportSave()"]');
+  const oldImport=legacy.querySelector('label input[onchange="importSave(event)"]')?.parentElement;
+  if(oldExport||oldImport){
+   const details=document.createElement('details');
+   details.className='vamos-legacy-backups';
+   details.innerHTML='<summary>Einzelne alte Sicherungen verwalten</summary>';
+   if(oldExport)details.appendChild(oldExport);
+   if(oldImport)details.appendChild(oldImport);
+   legacy.appendChild(details);
+  }
+ }
+ const arcadeFoot=document.querySelector('.arcade-foot');
+ if(arcadeFoot)arcadeFoot.textContent='Coins und Spielstände werden auf diesem Gerät gespeichert. Unter Mehr → „Alles sichern“ kannst du jetzt mit einem Klick alle Daten gemeinsam sichern. Einzelne Arcade-Sicherungen bleiben optional möglich.';
+}
+vamosInitCombinedBackup();
+
+const vamosOriginalRenderStats=renderStats;
+renderStats=function(){vamosOriginalRenderStats();vamosPremiumUpdate()};
+const vamosOriginalArcadeRefresh=arcadeRefresh;
+arcadeRefresh=function(){vamosOriginalArcadeRefresh();vamosPremiumUpdate()};
 
 applyLanguageUI();
 </script></body></html>
